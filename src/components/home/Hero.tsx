@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ReviewCarousel from '@/components/home/ReviewCarousel';
 
 export default function Hero() {
   return (
@@ -61,6 +62,8 @@ export default function Hero() {
           </svg>
         </div>
       </div>
+
+      <ReviewCarousel />
     </section>
   );
 }
