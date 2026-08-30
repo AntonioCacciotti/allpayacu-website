@@ -27,11 +27,6 @@ export default function Hero() {
       </div>
 
       <div id="hero-content" className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto pt-20">
-        <div id="hero-trust-pill" className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-jungle-cream text-xs font-semibold px-4 py-2 rounded-full mb-8 tracking-wider">
-          <span className="w-2 h-2 rounded-full bg-earth-orange animate-pulse" aria-hidden="true" />
-          INDIGENOUS OWNED · IQUITOS, PERU · SAFETY-FIRST
-        </div>
-
         <h1 id="hero-headline" className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
           A Traditional{' '}
           <em className="not-italic" style={{ color: '#fff9ae' }}>Ayahuasca</em>{' '}
