@@ -13,6 +13,9 @@
 /.next/
 /out/
 
+# server.sh runtime state (pid + logs)
+/.run/
+
 # production
 /build
 
