@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import ReviewCarousel from '@/components/home/ReviewCarousel';
+import { WHATSAPP_NUMBER } from '@/data/packages';
+
+const waLink = `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, '')}`;
 
 export default function Hero() {
   return (
@@ -45,9 +48,9 @@ export default function Hero() {
           <Link href="/packages" id="hero-cta-explore" aria-label="Explore all packages" className="btn-earth text-base px-8 py-4">
             Explore Packages
           </Link>
-          <Link href="/booking" id="hero-cta-booking" aria-label="Go to booking calculator" className="btn-outline border-white text-white hover:bg-white hover:text-jungle-700 text-base px-8 py-4">
+          <a href={waLink} target="_blank" rel="noopener noreferrer" id="hero-cta-whatsapp" aria-label="Chat with us on WhatsApp to begin your journey" className="btn-outline border-white text-white hover:bg-white hover:text-jungle-700 text-base px-8 py-4">
             Begin Your Journey
-          </Link>
+          </a>
         </div>
 
         <div id="hero-scroll-indicator" className="mt-16 flex flex-col items-center gap-2 text-white/40" aria-hidden="true">

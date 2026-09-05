@@ -37,6 +37,22 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   addons: 'Add-ons & Activities',
 };
 
+// The 3 revenue lines the business is organised around (see investor deck).
+// Venue rental is not a `Package` — it has its own content in `venueRental.ts`.
+export type ServiceGroup = 'jungle-adventure' | 'ayahuasca-ceremony';
+
+export const CATEGORY_TO_GROUP: Record<Exclude<Category, 'addons'>, ServiceGroup> = {
+  tours: 'jungle-adventure',
+  'jungle-survival': 'jungle-adventure',
+  'ayahuasca-bora': 'ayahuasca-ceremony',
+  'ayahuasca-yagua': 'ayahuasca-ceremony',
+};
+
+export const GROUP_LABELS: Record<ServiceGroup, string> = {
+  'jungle-adventure': 'Jungle Adventure',
+  'ayahuasca-ceremony': 'Ayahuasca Ceremony',
+};
+
 export const GROUP_DISCOUNT_THRESHOLD = 5;
 export const GROUP_DISCOUNT_NOTE =
   'Travelling with 5 or more people? Contact us for a customised group offer — we tailor programs and pricing for larger groups.';
@@ -454,4 +470,8 @@ export function getPackagesByCategory(category: Category): Package[] {
 
 export function getFeaturedPackages(): Package[] {
   return packages.filter((p) => p.featured);
+}
+
+export function getPackagesByGroup(group: ServiceGroup): Package[] {
+  return packages.filter((p) => p.category !== 'addons' && CATEGORY_TO_GROUP[p.category] === group);
 }

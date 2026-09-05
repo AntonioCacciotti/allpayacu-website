@@ -1,14 +1,19 @@
 import Hero from '@/components/home/Hero';
 import ValueProp from '@/components/home/ValueProp';
+import ThreeWaysIn from '@/components/home/ThreeWaysIn';
 import FeaturedPackages from '@/components/home/FeaturedPackages';
 import TrustSignals from '@/components/home/TrustSignals';
 import Link from 'next/link';
+import { WHATSAPP_NUMBER } from '@/data/packages';
+
+const waLink = `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, '')}`;
 
 export default function Home() {
   return (
     <>
       <Hero />
       <ValueProp />
+      <ThreeWaysIn />
       <FeaturedPackages />
       <TrustSignals />
 
@@ -21,9 +26,9 @@ export default function Home() {
             Whether you&apos;re drawn by the jungle, the medicine, or the river — we&apos;re here to help you find the right path.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/booking" className="btn-primary text-base px-8 py-4">
-              Calculate your retreat
-            </Link>
+            <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn-primary text-base px-8 py-4">
+              Chat with us on WhatsApp
+            </a>
             <Link href="/packages" className="btn-outline text-base px-8 py-4">
               Browse all packages
             </Link>
