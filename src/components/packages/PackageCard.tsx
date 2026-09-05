@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Package } from '@/data/packages';
-import { CATEGORY_LABELS } from '@/data/packages';
+import { CATEGORY_LABELS, WHATSAPP_NUMBER } from '@/data/packages';
 
 const categoryColors: Record<string, string> = {
   tours: 'bg-jungle-100 text-jungle-700',
@@ -16,6 +16,8 @@ interface Props {
 
 export default function PackageCard({ pkg, compact = false }: Props) {
   const catColor = categoryColors[pkg.category] ?? 'bg-stone-100 text-stone-700';
+  const waMsg = encodeURIComponent(`Hi Allpayacu! I'm interested in the ${pkg.name} (${pkg.duration}) package. Can you tell me more about availability and next steps?`);
+  const waLink = `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, '')}?text=${waMsg}`;
 
   return (
     <div className="card flex flex-col overflow-hidden group">
@@ -62,9 +64,9 @@ export default function PackageCard({ pkg, compact = false }: Props) {
           <Link href={`/packages/${pkg.slug}`} className="btn-primary flex-1 justify-center text-xs">
             View Details
           </Link>
-          <Link href={`/booking?pkg=${pkg.slug}`} className="btn-outline text-xs px-4 py-3">
-            Book
-          </Link>
+          <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn-outline text-xs px-4 py-3">
+            WhatsApp
+          </a>
         </div>
       </div>
     </div>

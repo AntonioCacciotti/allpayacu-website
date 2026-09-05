@@ -7,13 +7,13 @@ const footerPackages = [
   { label: 'Jungle Survival', href: '/packages?cat=jungle-survival' },
   { label: 'Ayahuasca – Bora', href: '/packages?cat=ayahuasca-bora' },
   { label: 'Ayahuasca – Yagua', href: '/packages?cat=ayahuasca-yagua' },
+  { label: 'Venue Rental', href: '/venue-rental' },
   { label: 'Add-ons & Activities', href: '/packages?cat=addons' },
 ];
 
 const footerLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Book Now', href: '/booking' },
 ];
 
 export default function Footer() {
